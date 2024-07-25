@@ -19,6 +19,10 @@ For example, on the [movie details page](https://urban-potato-flame.vercel.app/m
 
 I leveraged OpenAI's GPT-4o model to create an AI chat widget that can answer questions about the movie. It takes in a system prompt that includes movie metadata if its available, then waits for the user to ask a question. The user's question (and the entire chat history) is then appended to the system prompt and sent to the model to generate a response. The AI chat widget is available on the [movie details page](https://urban-potato-flame.vercel.app/movie-details/llNU1NFpijiLc1udSYxBG).
 
+### A small but neat feature: Recently viewed movies
+
+Once you visit a movie details page, the movie is added to the recently viewed movies list. This list is stored in local storage and displayed on the home page. This is a small feature that provides a way for users to quickly navigate back to movies they have recently viewed.
+
 ### What I would like to add
 
 #### Ratings and Reviews
