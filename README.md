@@ -29,7 +29,7 @@ I would like to add a feature that allows users to rate movies and leave reviews
 
 I would like to add genre pages that display a list of movies in a particular genre entities contain a list of movies that belong to that genre. This would provide users with another way to discover movies other than just searching for them.
 
-#### Make the AI more prevalent
+#### Improve AI prevalance and capabilities
 
 I would like to make the AI chat widget more prevalent by adding it to more pages. For example, I could add it to the home page for more general movie related chat interactions, or even have it as a floating widget that follows the user around the site. The prompts could update dynamically based on the user's interactions with the site.
 
