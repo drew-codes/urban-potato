@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { KeyboardEvent } from "react";
 
 export const SearchInput = () => {
   const router = useRouter();

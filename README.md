@@ -1,3 +1,42 @@
+# Cheapflix
+Just like netflix, but you have to use your imagination.
+
+https://urban-potato-flame.vercel.app/
+
+## Project Details
+
+Here are a few details about the implementation of the application.
+
+### Leveraging SSR for performance
+
+With Next.js 14, components are React Server Components by default. This means that the components are rendered on the server and sent to the client as HTML. This is great for performance as the client doesn't have to wait for the JavaScript to load and render the components.
+
+I've put an emphasis on leveraging RSC for simple components that don't need to be interactive, and using client-side rendering for components that need to be interactive.
+
+For example, on the [movie details page](https://urban-potato-flame.vercel.app/movie-details/llNU1NFpijiLc1udSYxBG), the movie details are rendered on the server, but the AI Chat widget is rendered on the client.
+
+### A feature that I am pleased about: AI Chat Widget
+
+I leveraged OpenAI's GPT-4o model to create an AI chat widget that can answer questions about the movie. It takes in a system prompt that includes movie metadata if its available, then waits for the user to ask a question. The user's question (and the entire chat history) is then appended to the system prompt and sent to the model to generate a response. The AI chat widget is available on the [movie details page](https://urban-potato-flame.vercel.app/movie-details/llNU1NFpijiLc1udSYxBG).
+
+### What I would like to add
+
+#### Ratings and Reviews
+
+I would like to add a feature that allows users to rate movies and leave reviews. This would require a backend to store the ratings and reviews, and a way to display the ratings and reviews on the movie details page.
+
+#### Genre Pages
+
+I would like to add genre pages that display a list of movies in a particular genre entities contain a list of movies that belong to that genre. This would provide users with another way to discover movies other than just searching for them.
+
+#### Make the AI more prevalent
+
+I would like to make the AI chat widget more prevalent by adding it to more pages. For example, I could add it to the home page for more general movie related chat interactions, or even have it as a floating widget that follows the user around the site. The prompts could update dynamically based on the user's interactions with the site.
+
+It would also be neat to explore the function calling capabilities of OpenAI's API to allow the AI to make network requests to retrieve additional data related to a movie.
+ 
+--- 
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
