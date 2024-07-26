@@ -14,6 +14,7 @@ import {
 export const SearchResults = () => {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("q");
+  const [searchInputValue, setSearchInputValue] = useState(searchQuery);
   const router = useRouter();
   const pathname = usePathname();
   const [currPage, setCurrPage] = useState(1);
@@ -53,15 +54,18 @@ export const SearchResults = () => {
 
   const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = e.target.value;
-    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    const currentSearchParams = new URLSearchParams(
+      Array.from(searchParams.entries())
+    );
+    setSearchInputValue(searchValue);
 
     if (searchValue) {
-      current.set("q", searchValue);
+      currentSearchParams.set("q", searchValue);
     } else {
-      current.delete("q");
+      currentSearchParams.delete("q");
     }
 
-    router.push(`${pathname}?${current.toString()}`);
+    router.push(`${pathname}?${currentSearchParams.toString()}`);
   };
 
   const handleDropdownChange = useCallback((genre: string | null) => {
@@ -89,7 +93,7 @@ export const SearchResults = () => {
             <input
               id="search"
               name="search"
-              value={searchQuery || ""}
+              value={searchInputValue || ""}
               onChange={handleSearchInputChange}
               type="text"
               className="block w-full rounded-md border-0 py-2 pl-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
